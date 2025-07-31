@@ -27,3 +27,11 @@ test('parametrized methods', async ({page}) => {
     await pm.onFormLayoutsPage().submitUsingTheGridFormWithCredentialsAndSelectOption(process.env.USERNAME, process.env.PASSWORD, 'Option 1');
     await pm.onFormLayoutsPage().submitInLineFormWithNameEmailAndCheckbox(randomFullName, randomEmail, true);
 });
+
+test.only('testing with argo ci', async ({page}) => {
+   const pm = new PageManager(page);
+   //const randomFullName = faker.person.fullName()
+   //const randomEmail = `${randomFullName.replace(' ', '')}${faker.number.int(1000)}@test.com`
+
+    await pm.navigateTo().formLayoutsPage();
+});
